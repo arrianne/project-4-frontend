@@ -1,0 +1,11 @@
+<ul class="row">
+  <li ng-repeat="appointment in appointmentsIndex.all" class="col-md-6">
+    <div class="appointment">
+      <h2>{{ appointment.name }}<h2>
+      <h3>{{ appointment.location }}</h3>
+      <h4>{{ appointment.date | date: 'longDate' }}</h4>
+      <p>Created by: <strong>{{ appointment.user.username }}</strong></p>
+      <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
+    </div>
+  </li>
+</ul>

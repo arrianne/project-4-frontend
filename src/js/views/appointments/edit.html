@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6">
+    <form ng-submit="appointmentsAppointment.update()">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" ng-model="appointmentsAppointment.appointment.name">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" ng-model="appointmentsAppointment.appointment.date">
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" ng-model="appointmentsAppointment.appointment.location">
+
+      <label>Attendees</label>
+      <label ng-repeat="user in appointmentsAppointment.users">
+        <input type="checkbox" name="attendees" checklist-model="appointmentsAppointment.appointment.category_ids" checklist-value="user.id">{{ user.username }}
+      </label>
+
+      <button>Update</button>
+    </form>
+  </div>
+</div>
