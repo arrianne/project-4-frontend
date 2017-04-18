@@ -5,11 +5,12 @@ angular
   .controller('AppointmentsShowCtrl', AppointmentsShowCtrl)
   .controller('AppointmentsEditCtrl', AppointmentsEditCtrl);
 
-AppointmentsIndexCtrl.$inject = ['Appointment'];
-function AppointmentsIndexCtrl(Appointment) {
+AppointmentsIndexCtrl.$inject = ['Appointment', 'Category'];
+function AppointmentsIndexCtrl(Appointment, Category) {
   const vm = this;
 
   vm.all = Appointment.query();
+  vm.categories = Category.query();
 }
 
 AppointmentsNewCtrl.$inject = ['Appointment', 'User', '$state'];

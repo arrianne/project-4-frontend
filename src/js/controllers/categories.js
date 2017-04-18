@@ -1,13 +1,16 @@
 angular
   .module('diabetesApp')
-  .controller('CategoriesShowCtrl', CategoriesShowCtrl);
+  .controller('CategoriesIndexCtrl', CategoriesIndexCtrl);
 
-CategoriesShowCtrl.$inject = ['Appointment', 'Category', '$stateParams', '$state', '$auth'];
-function CategoriesShowCtrl(Appointment, Category, $stateParams, $state, $auth) {
+CategoriesIndexCtrl.$inject = ['Appointment', 'Category'];
+function CategoriesIndexCtrl(Appointment, Category) {
   const vm = this;
-  if ($auth.getPayload()) vm.currentCategory = Category.get({ id: $auth.getPayload().id });
+  vm.all = Category.query();
 
-  vm.user = Category.get($stateParams);
+  // vm.user = Category.get($stateParams);
 
 
 }
+
+
+// vm.user = User.get({ id: $auth.getPayload().id });

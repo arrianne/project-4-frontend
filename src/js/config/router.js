@@ -52,10 +52,10 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/users/edit.html',
       controller: 'UsersEditCtrl as usersEdit'
     })
-    .state('categoriesShow', {
+    .state('categoriesIndex', {
       url: '/categories',
-      templateUrl: 'js/views/categories/show.html',
-      controller: 'CategoriesShowCtrl as categoriesShow'
+      templateUrl: 'js/views/categories/index.html',
+      controller: 'CategoriesIndexCtrl as categoriesIndex'
     });
 
   $urlRouterProvider.otherwise('/');

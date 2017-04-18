@@ -7,7 +7,7 @@
       <h4>{{ appointment.date_time}}</h4>
       <h4>{{ appointment.specialist}}</h4>
       <h4>{{ appointment.comment}}</h4>
-      <h4>{{ appointment.category_ids.all}}</h4>
+      <h4 ng-repeat="category in appointment.category_ids">{{ appointmentsIndex.categories[category - 1].name }}</h4>
       <p>Created by: <strong>{{ appointment.user.username }}</strong></p>
       <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
     </div>
