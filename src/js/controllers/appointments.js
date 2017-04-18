@@ -28,8 +28,8 @@ function AppointmentsNewCtrl(Appointment, User, $state) {
   vm.create = appointmentsCreate;
 }
 
-AppointmentsShowCtrl.$inject = ['Appointment', 'User', 'Comment', '$stateParams', '$state', '$auth'];
-function AppointmentsShowCtrl(Appointment, User, Comment, $stateParams, $state, $auth) {
+AppointmentsShowCtrl.$inject = ['Appointment', 'User', 'Category', '$stateParams', '$state', '$auth'];
+function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state, $auth) {
   const vm = this;
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
@@ -48,31 +48,31 @@ function AppointmentsShowCtrl(Appointment, User, Comment, $stateParams, $state, 
       .update({id: vm.appointment.id, appointment: vm.appointment });
   }
 
-  function addComment() {
+  function addCategory() {
     vm.comment.appointment_id = vm.appointment.id;
 
-    Comment
-      .save({ comment: vm.comment })
+    Category
+      .save({ category: vm.category })
       .$promise
-      .then((comment) => {
-        vm.appointment.comments.push(comment);
-        vm.comment = {};
+      .then((category) => {
+        vm.appointment.categorys.push(category);
+        vm.category = {};
       });
   }
 
-  vm.addComment = addComment;
+  vm.addCategory = addCategory;
 
-  function deleteComment(comment) {
-    Comment
-      .delete({ id: comment.id })
+  function deleteCategory(category) {
+    Category
+      .delete({ id: category.id })
       .$promise
       .then(() => {
-        const index = vm.appointment.comments.indexOf(comment);
-        vm.appointment.comments.splice(index, 1);
+        const index = vm.appointment.categories.indexOf(category);
+        vm.appointment.categories.splice(index, 1);
       });
   }
 
-  vm.deleteComment = deleteComment;
+  vm.deleteCategory = deleteCategory;
 
   function toggleAttending() {
     const index = vm.appointment.attendee_ids.indexOf(vm.currentUser.id);

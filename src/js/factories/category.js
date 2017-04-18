@@ -1,10 +1,10 @@
 angular
   .module('diabetesApp')
-  .factory('Comment', Comment);
+  .factory('Category', Category);
 
-Comment.$inject = ['$resource', 'API_URL'];
-function Comment($resource, API_URL) {
-  return new $resource(`${API_URL}/comments/:id`, { id: '@id' }, {
+Category.$inject = ['$resource', 'API_URL'];
+function Category($resource, API_URL) {
+  return new $resource(`${API_URL}/categories/:id`, { id: '@id' }, {
     update: { method: 'PUT' }
   });
 }

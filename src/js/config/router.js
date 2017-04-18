@@ -34,13 +34,28 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'js/views/auth/login.html',
+      templateUrl: 'js/views/auth/category.html',
       controller: 'AuthCtrl as auth'
     })
     .state('register', {
       url: '/register',
       templateUrl: 'js/views/auth/register.html',
       controller: 'AuthCtrl as auth'
+    })
+    .state('usersShow', {
+      url: '/users',
+      templateUrl: 'js/views/users/show.html',
+      controller: 'UsersShowCtrl as usersShow'
+    })
+    .state('usersEdit', {
+      url: '/users/:id/edit',
+      templateUrl: 'js/views/users/edit.html',
+      controller: 'UsersEditCtrl as usersEdit'
+    })
+    .state('categoriesShow', {
+      url: '/categories',
+      templateUrl: 'js/views/categories/show.html',
+      controller: 'CategoriesShowCtrl as categoriesShow'
     });
 
   $urlRouterProvider.otherwise('/');

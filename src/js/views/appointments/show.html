@@ -1,25 +1,17 @@
 <div class="row">
   <div class="col-md-6">
     <div class="appointment">
-      <h2>{{ appointmentsShow.appointment.name }}<h2>
-      <h3>{{ appointmentsShow.appointment.location }}<h3>
-      <h4>{{ appointmentsShow.appointment.date | date: 'longDate' }}</h4>
+      <h3>{{ appointment.location }}<h3>
+      <h4>{{ appointment.date_time}}</h4>
+      <h4>{{ appointment.specialist}}</h4>
       <p>Created by: <strong>{{ appointmentsShow.appointment.user.username }}</strong></p>
-
-      <button ng-click="appointmentsShow.toggleAttending()" ng-if="!appointmentsShow.isAttending() && main.isAuthenticated()">Attend</button>
-      <button ng-click="appointmentsShow.toggleAttending()" ng-if="appointmentsShow.isAttending() && main.isAuthenticated()">Reject</button>
-
       <button ui-sref="appointmentsEdit({id: appointmentsShow.appointment.id})" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Edit</button>
       <button ng-click="appointmentsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Delete</button>
     </div>
   </div>
   <div class="col-md-6">
     <div class="attendees">
-      <h5>Categories</h5>
-      <!-- <ul>
-        <li ng-repeat="category in appointmentsShow.appointment.attendees">{{ attendee.username }}</li>
-      </ul> -->
-
+      <h5>Category:{{appointment.category_ids}}</h5>
     </div>
   </div>
 </div>
