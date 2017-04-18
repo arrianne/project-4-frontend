@@ -5,12 +5,12 @@ angular
 
 
 
-UsersShowCtrl.$inject = ['User', 'User', 'Category', '$stateParams', '$state', '$auth'];
-function UsersShowCtrl(User, Appointment, Category, $stateParams, $state, $auth) {
+UsersShowCtrl.$inject = ['User', 'User', 'Category', '$state', '$auth'];
+function UsersShowCtrl(User, Appointment, Category, $state, $auth) {
   const vm = this;
-  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
+  vm.user = User.get({ id: $auth.getPayload().id });
 
-  vm.user = User.get($stateParams);
+  // vm.user = User.get($stateParams);
 
   function usersDelete() {
     vm.user

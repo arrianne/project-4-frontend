@@ -1,11 +1,27 @@
 <ul class="row">
   <li ng-repeat="appointment in appointmentsIndex.all" class="col-md-6">
     <div class="appointment">
-      <h2>{{ appointment.name }}<h2>
       <h3>{{ appointment.location }}</h3>
-      <h4>{{ appointment.date | date: 'longDate' }}</h4>
+      <h4>{{ appointment.lat}}</h4>
+      <h4>{{ appointment.lng}}</h4>
+      <h4>{{ appointment.date_time}}</h4>
+      <h4>{{ appointment.specialist}}</h4>
+      <h4>{{ appointment.comment}}</h4>
+      <h4>{{ appointment.category_ids.all}}</h4>
       <p>Created by: <strong>{{ appointment.user.username }}</strong></p>
       <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
     </div>
   </li>
 </ul>
+
+
+Appointment.create!(
+  location: "Royal London hospital, Whitechapel Rd, Whitechapel, London E1 1BB",
+  lat: "51.519",
+  lng: "-.0581",
+  date_time: DateTime.new(2017,5,3,14,20,0),
+  specialist: "Sue Parker - Dietician",
+  comment: "Must remember to bring the list of meals I've had in the last week to discuss.",
+  user: user1,
+  category_ids: [cat6.id, cat2.id]
+)

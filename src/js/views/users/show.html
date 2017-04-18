@@ -10,7 +10,7 @@
       <h4>{{ user.gp_address }}</h4>
       <h4>{{ user.diagnosis_date }}</h4>
       <h4>{{ user.diabetes_type }}</h4>
-      <button ui-sref="usersEdit({id: usersShow.appointment.id})" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Edit</button>
+      <button ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Edit</button>
       <button ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
     </div>
   </div>
