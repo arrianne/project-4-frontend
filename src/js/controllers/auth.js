@@ -15,7 +15,7 @@ function AuthCtrl($auth, $state) {
 
   function login() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('appontmentsIndex'));
+      .then(() => $state.go('appointmentsIndex'));
   }
 
   vm.login = login;
