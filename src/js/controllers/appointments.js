@@ -1,5 +1,5 @@
 angular
-  .module('appointmentApp')
+  .module('diabetesApp')
   .controller('AppointmentsIndexCtrl', AppointmentsIndexCtrl)
   .controller('AppointmentsNewCtrl', AppointmentsNewCtrl)
   .controller('AppointmentsShowCtrl', AppointmentsShowCtrl)

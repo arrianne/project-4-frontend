@@ -1,5 +1,5 @@
 angular
-  .module('appointmentApp')
+  .module('diabetesApp')
   .controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = ['$rootScope', '$state', '$auth'];
