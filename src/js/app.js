@@ -1,6 +1,6 @@
 // app.js is the main JS file which you should define your Angular module
 angular
-  .module('diabetesApp', ['ui.router', 'ngResource', 'satellizer', 'checklist-model'])
+  .module('diabetesApp', ['ui.router', 'ngResource', 'satellizer', 'checklist-model', 'ui.bootstrap', 'ngAnimate'])
   .constant('API_URL', 'http://localhost:3000/api')
   .config(Auth)
   .controller('LoginCtrl', LoginCtrl);

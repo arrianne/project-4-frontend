@@ -1,17 +1,18 @@
+
+<!DOCTYPE html>
 <h1>Your Profile</h1>
 
 <div class="row">
   <div class="col-md-6">
     <div class="user">
-      <p>Category: <strong>{{ appointmentsShow.appointment.category.name }}</strong></p>
-      <h3>{{ user.username }}<h3>
-      <h4>{{ user.medication }}</h4>
-      <h4>{{ user.gp_name }}</h4>
-      <h4>{{ user.gp_address }}</h4>
-      <h4>{{ user.diagnosis_date }}</h4>
-      <h4>{{ user.diabetes_type }}</h4>
+      <h3>Username:{{ usersShow.user.username }}</h3>
+      <h4>Medication:{{ usersShow.user.medication }}</h4>
+      <h4>GP name:{{ usersShow.user.gp_name }}</h4>
+      <h4>GP Address:{{ usersShow.user.gp_address }}</h4>
+      <h4>Diagnosis date:{{ usersShow.user.diagnosis_date }}</h4>
+      <h4>Diabetes type:{{ usersShow.user.diabetes_type }}</h4>
       <button ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Edit</button>
       <button ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
     </div>
   </div>
-  <div class="col-md-6">
+</div>

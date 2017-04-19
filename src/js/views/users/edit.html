@@ -1,20 +1,27 @@
+<!DOCTYPE html>
 <h1>Edit</h1>
 <div class="row">
   <div class="col-md-6">
     <form ng-submit="appointmentsNew.create()">
-      <label for="name">Username</label>
+      <label for="username">Username</label>
       <input type="text" id="username" name="username" ng-model="usersEdituser.username">
+
       <label for="email">Email</label>
       <input type="text" id="email" name="email" ng-model="usersEdituser.email">
-      <label for="email">Medication</label>
+
+      <label for="medication">Medication</label>
       <input type="text" id="medication" name="medication" ng-model="usersEdituser.medication">
-      <label for="email">GP Name</label>
+
+      <label for="gp_name">GP Name</label>
       <input type="text" id="gp_name" name="gp_name" ng-model="usersEdituser.gp_name">
-      <label for="email">GP Address</label>
+
+      <label for="gp_address">GP Address</label>
       <input type="text" id="gp_address" name="gp_address" ng-model="usersEdituser.gp_address">
-      <label for="date">Diagnosis Date</label>
+
+      <label for="diagnosis_date">Diagnosis Date</label>
       <input type="date" id="diagnosis_date" name="diagnosis_date" ng-model="appointmentsNewappointment.diagnosis_date">
-      <label for="date">Diabetes Type</label>
+
+      <label for="diabetess_type">Diabetes Type</label>
       <input type="date" id="diabetes_type" name="diabetes_type" ng-model="appointmentsNewappointment.diabetes_type">
       <button>Update</button>
     </form>

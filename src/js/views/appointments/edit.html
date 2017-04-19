@@ -1,19 +1,43 @@
+<!DOCTYPE html>
 <div class="row">
   <div class="col-md-6">
-    <form ng-submit="appointmentsAppointment.update()">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" ng-model="appointmentsAppointment.appointment.name">
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" ng-model="appointmentsAppointment.appointment.date">
-      <label for="location">Location</label>
-      <input type="text" id="location" name="location" ng-model="appointmentsAppointment.appointment.location">
+    <form ng-submit="appointmentsEdit.update()">
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" ng-model="appointmentsEdit.appointment.location">
+      </div>
 
-      <label>Attendees</label>
-      <label ng-repeat="user in appointmentsAppointment.users">
-        <input type="checkbox" name="attendees" checklist-model="appointmentsAppointment.appointment.category_ids" checklist-value="user.id">{{ user.username }}
-      </label>
+      <div class="form-group">
+        <label for="date_time">Date/time</label>
+        <input type="datetime-local" id="date" name="date" ng-model="appointmentsEdit.appointment.date_time">
+      </div>
 
-      <button>Update</button>
+      <div class="form-group">
+        <label for="specialist">Specialist</label>
+        <input type="text" id="specialist" name="specialist" ng-model="appointmentsEdit.appointment.specialist">
+     </div>
+
+     <div class="form-group">
+        <label for="comment">Comment</label>
+        <input type="text" id="comment" name="comment" ng-model="appointmentsEdit.appointment.comment">
+     </div>
+
+     <div class="form-group">
+        <label for="category_ids"> Appointment category </label><br>
+        <select name="category" ng-model="category.category_ids.name">
+          <option value="cat1">blood glucose/fats</option>
+          <option value="cat2">blood pressure</option>
+          <option value="cat3">eye screening</option>
+          <option value="cat4">feet and legs</option>
+          <option value="cat5">kidney function</option>
+          <option value="cat6">dietary advice</option>
+          <option value="cat7">emotional/psychological support</option>
+          <option value="cat8">group education</option>
+        </select>
+     </div>
+
+        <button>Update</button>
+
     </form>
   </div>
 </div>

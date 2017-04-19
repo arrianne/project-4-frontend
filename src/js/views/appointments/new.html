@@ -1,17 +1,40 @@
+<!DOCTYPE html>
 <div class="row">
   <div class="col-md-6">
     <form ng-submit="appointmentsNew.create()">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" ng-model="appointmentsNewappointment.name">
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" ng-model="appointmentsNewappointment.date">
-      <label for="location">Location</label>
-      <input type="text" id="location" name="location" ng-model="appointmentsNewappointment.location">
-      <label>Attendees</label>
-      <label ng-repeat="user in appointmentsNew.users">
-        <input type="checkbox" name="attendees" checklist-model="appointmentsNewappointment.attendee_ids" checklist-value="user.id">{{ user.username }}
-      </label>
-      <button>Create</button>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" autocomplete ng-model="appointmentsNew.appointment.location" geometry="appointmentsNew.appointment.date.geometry" required name="location" id="location" placeholder = "Enter the location of your appointment">
+          <div ng-messages="newAppointment.newAppointmentForm.location.$error" ng-show="newAppointment.newAppointmentForm.$submitted || newAppointment.newAppointmentForm.location.$touched" role="alert">
+            <p ng-message="required">Address is required.</p>
+          </div>
+          <input type="hidden" ng-model="appointment.lat" name="lat">
+          <input type="hidden" ng-model="appointment.lng" name="lng">
+        </div>
+
+         <div class="form-group">
+          <label for="date_time">Date/time</label>
+          <input type="datetime-local" id="date_time" name="date_time" ng-model="appointmentsNew.appointment.date_time">
+         </div>
+
+        <div class="form-group">
+          <label for="specialist">Specialist/Doctor (if known)</label>
+          <input type="text" id="specialist" name="specialist" ng-model="appointmentsNew.appointment.specialist">
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Any comments/reminders?</label>
+          <input type="text" id="comment" name="comment" ng-model="appointmentsNew.appointment.comment">
+        </div>
+
+        <div class="form-group">
+        <label for="category_ids"> Appointment category </label><br>
+          <select ng-model="appointmentsNew.appointment.category_ids">
+            <option ng-repeat="category in appointmentsNew.categories" name="category_ids" value="{{category.ids}}">{{category.name}}</option>
+          </select>
+        </div>
+      <button>Add appointment</button>
     </form>
   </div>
 </div>

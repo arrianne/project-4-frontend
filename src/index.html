@@ -9,20 +9,33 @@
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
+    <script>
+      //add google api key
+    </script>
   </head>
   <body ng-controller="MainCtrl as main" ng-class="main.pageName">
     <header>
-      <nav>
-        <ul>
-          <li><a ui-sref="home">DiabetesApp</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-          <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
-          <li><a ui-sref="appointmentsNew" ui-sref-active="active">Add Appointment</a></li>
-          <li><a ui-sref="categoriesShow" ui-sref-active="active">Categories</a></li>
-          <li><a ui-sref="appointmentsIndex" ui-sref-active="active">Future appointments</a></li>
-          <li><a ui-sref="usersShow" ui-sref-active="active">Profile</a></li>
-        </ul>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">DiabetesApp</a>
+        </div>
+        <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
+          <ul class="nav navbar-nav">
+            <li ng-if="main.isAuthenticated()"><a href="login" ui-sref-active="active">Login</a></li>
+            <li ng-if="main.isAuthenticated()"><a href="register" ui-sref-active="active">Register</a></li>
+            <li ng-if="main.isAuthenticated()"><a href="login">Logout</a></li>
+            <li><a ui-sref="appointmentsNew" ui-sref-active="active">Add Appointment</a></li>
+            <li><a ui-sref="categoriesIndex" ui-sref-active="active">Categories</a></li>
+            <li><a ui-sref="appointmentsIndex" ui-sref-active="active">Future appointments</a></li>
+            <li><a ui-sref="usersShow" ui-sref-active="active">Profile</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
     <div class="message" ng-if="main.message">
