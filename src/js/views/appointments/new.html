@@ -3,7 +3,13 @@
   <div class="col-md-6">
     <form ng-submit="appointmentsNew.create()">
 
-        <div class="form-group">
+      <div>
+        <div id="pac-container">
+          <input id="pac-input" type="text" placeholder="Search Location" autocomplete ng-model="appointmentNew.appointment.location" class="form-control" geometry="appointmentNew.appointment.geometry" choose-listing="appointmentNew.chooseListing(place)">
+        </div>
+      </div>
+
+        <!-- <div class="form-group">
           <label for="location">Location</label>
           <input type="text" class="form-control" autocomplete ng-model="appointmentsNew.appointment.location" geometry="appointmentsNew.appointment.date.geometry" required name="location" id="location" placeholder = "Enter the location of your appointment">
           <div ng-messages="newAppointment.newAppointmentForm.location.$error" ng-show="newAppointment.newAppointmentForm.$submitted || newAppointment.newAppointmentForm.location.$touched" role="alert">
@@ -11,7 +17,9 @@
           </div>
           <input type="hidden" ng-model="appointment.lat" name="lat">
           <input type="hidden" ng-model="appointment.lng" name="lng">
-        </div>
+        </div> -->
+
+        <appointment-map></appointment-map>
 
          <div class="form-group">
           <label for="date_time">Date/time</label>

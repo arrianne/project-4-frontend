@@ -30,8 +30,8 @@ function AppointmentsIndexCtrl(Appointment, Category) {
 
 //new
 
-AppointmentsNewCtrl.$inject = ['Appointment', 'Category', 'User', '$state'];
-function AppointmentsNewCtrl(Appointment, Category, User, $state) {
+AppointmentsNewCtrl.$inject = ['Appointment', 'Category', 'User', '$state', '$scope'];
+function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope) {
   const vm = this;
   vm.appointment = {};
   vm.users = User.query();
@@ -45,7 +45,23 @@ function AppointmentsNewCtrl(Appointment, Category, User, $state) {
   }
 
   vm.create = appointmentsCreate;
+
+  function chooseListing(place) {
+    const location = place.geometry.location.toJSON();
+    console.log(location);
+    vm.appointment.location = place.name;
+    vm.appointment.lat = location.lat;
+    vm.appointment.lng = location.lng;
+
+
+    $scope.$apply();
+
+  }
+
+  vm.chooseListing = chooseListing;
+
 }
+
 
 
 
@@ -58,6 +74,14 @@ function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state,
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
   vm.appointment = Appointment.get($stateParams);
+
+  vm.location = {
+    lat: vm.appointment.lat,
+    lng: vm.appointment.lng
+  };
+  
+
+
 
   function appointmentsDelete() {
     vm.appointment
