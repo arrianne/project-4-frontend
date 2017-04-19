@@ -34,7 +34,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'js/views/auth/category.html',
+      templateUrl: 'js/views/auth/login.html',
       controller: 'AuthCtrl as auth'
     })
     .state('register', {
@@ -56,6 +56,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/categories',
       templateUrl: 'js/views/categories/index.html',
       controller: 'CategoriesIndexCtrl as categoriesIndex'
+    })
+    .state('categoriesShow', {
+      url: '/categories/:id',
+      templateUrl: 'js/views/categories/show.html',
+      controller: 'CategoriesShowCtrl as categoriesShow'
     });
 
   $urlRouterProvider.otherwise('/');
