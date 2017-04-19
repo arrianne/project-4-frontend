@@ -8,6 +8,7 @@
       <h4>{{ appointmentsShow.appointment.specialist}}</h4>
       <h4>{{ appointmentsShow.appointment.comment}}</h4>
       <h4>{{ appointmentsShow.appointment.category_ids}}</h4>
+      <google-map center="{ lat: 52.1, lng: -0.085 }"></google-map>
       <p>Created by: <strong>{{ appointmentsShow.appointment.user.username }}</strong></p>
       <button ui-sref="appointmentsEdit({id: appointmentsShow.appointment.id})" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Edit</button>
       <button ng-click="appointmentsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Delete</button>

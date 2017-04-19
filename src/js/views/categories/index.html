@@ -1,3 +1,6 @@
 <!DOCTYPE html>
 <h1>categories</h1>
-<p ng-repeat="category in categoriesIndex.all">{{ category.name }}</p>
+<ul>
+  <li><a ui-sref="categoriesShow({ id: category.id })" ng-repeat="category in categoriesIndex.all">{{ category.name }}</a></li>
+
+</ul>

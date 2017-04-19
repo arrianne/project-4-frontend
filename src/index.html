@@ -9,8 +9,9 @@
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
-    <script>
-      //add google api key
+
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9KU20l9YoK6mjQ7B0odNMrEgSBAbogQ">
     </script>
   </head>
   <body ng-controller="MainCtrl as main" ng-class="main.pageName">
@@ -42,5 +43,14 @@
       <div class="container">{{main.message}}</div>
     </div>
     <main ui-view></main>
+
+
   </body>
 </html>
+
+
+<!-- <label for="username">Username</label>
+    <input type="username" name="username" id="username" ng-model="login.credentials.username" required class="form-control">
+    <div class="messages error" ng-messages="login.loginForm.username.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.username.$touched) && login.loginForm.username.$invalid">
+      <div class="message" ng-message="required">Please enter a value for this field.</div>
+    </div> -->
