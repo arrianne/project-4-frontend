@@ -36,12 +36,20 @@
         </div>
 
         <div class="form-group">
-        <label for="category_ids"> Appointment category </label><br>
-          <select ng-model="appointmentsNew.appointment.category_ids">
-            <option ng-repeat="category in appointmentsNew.categories" name="category_ids" value="{{category.ids}}">{{category.name}}</option>
-          </select>
+          <label ng-repeat="category in appointmentsNew.categories">
+            <input type="checkbox" name="categories" checklist-model="appointmentsNew.appointment.category_ids" checklist-value="category.id">{{ category.name }}
+          </label>
         </div>
       <button>Add appointment</button>
     </form>
   </div>
 </div>
+
+
+
+
+<!--
+      <label for="category_ids"> Appointment category </label><br>
+        <select ng-model="appointmentsNew.appointment.category_ids">
+          <option ng-repeat="category in appointmentsNew.categories" name="category_ids" value="{{category.ids}}">{{category.name}}</option>
+            </select> -->
