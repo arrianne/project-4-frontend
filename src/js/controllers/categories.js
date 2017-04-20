@@ -14,8 +14,8 @@ function CategoriesIndexCtrl(Appointment, Category) {
 }
 
 
-CategoriesShowCtrl.$inject = [ 'Category', 'User', '$stateParams', '$state', '$auth'];
-function CategoriesShowCtrl(Category, User, $stateParams, $state, $auth) {
+CategoriesShowCtrl.$inject = [ 'Category', 'Appointment', 'User', '$stateParams', '$state', '$auth'];
+function CategoriesShowCtrl(Category, Appointment, User, $stateParams, $state, $auth) {
   const vm = this;
   if ($auth.getPayload()) vm.currentUserId = $auth.getPayload().id;
 

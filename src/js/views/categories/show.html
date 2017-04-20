@@ -2,6 +2,6 @@
 <img ng-src="{{ categoriesShow.category.image}}">
 
 <ul>
-  <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment }}</li>
-  <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
+  <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment }}
+  <button ui-sref="appointmentsShow({id: appointment.id})">View</button></li>
 </ul>

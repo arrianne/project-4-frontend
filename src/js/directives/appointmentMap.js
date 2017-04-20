@@ -82,8 +82,7 @@ function autocomplete($window) {
     scope: {
       lat: '=',
       lng: '=',
-      chooseListing: '&',
-      geometry: '='
+      chooseListing: '&'
     },
 
     link: function($scope, element, attrs, model) {
@@ -97,7 +96,8 @@ function autocomplete($window) {
       autocomplete.addListener('place_changed', () => {
         const place = autocomplete.getPlace();
 
-        $scope.geometry = place.geometry.location.toJSON();
+        $scope.lat = place.geometry.location.toJSON().lat;
+        $scope.lng = place.geometry.location.toJSON().lng;
         // console.log($scope.geometry);
         model.$setViewValue(element.val());
         $scope.chooseListing({ place });

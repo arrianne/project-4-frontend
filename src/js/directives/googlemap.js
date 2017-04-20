@@ -10,14 +10,13 @@ function googleMap($window) {
     replace: true,
     template: '<div class="google-map"></div>',
     scope: {
-      center: '=',
       appointment: '='
     },
 
     link($scope, element) {
       const map = new $window.google.maps.Map(element[0], {
         zoom: 14,
-        center: $scope.center,
+        center: {lat: $scope.appointment.lat, lng: $scope.appointment.lng},
         scrollwheel: false
       });
 
@@ -28,7 +27,7 @@ function googleMap($window) {
       const locationMarker = new $window.google.maps.Marker({
         map: map,
         animation: google.maps.Animation.DROP,
-        position: {lat}
+        position: {lat: $scope.appointment.lat, lng: $scope.appointment.lng}
       });
 
 

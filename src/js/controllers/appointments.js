@@ -25,6 +25,7 @@ function AppointmentsIndexCtrl(Appointment, User, Category, $scope, $auth) {
 
 //new
 
+
 AppointmentsNewCtrl.$inject = ['Appointment', 'Category', 'User', '$state', '$scope', '$auth'];
 function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope, $auth) {
   const vm = this;
@@ -64,6 +65,7 @@ function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope, $auth)
 
 
 //SHOW
+
 
 AppointmentsShowCtrl.$inject = ['Appointment', 'User', 'Category', '$stateParams', '$state', '$auth'];
 function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state, $auth) {
@@ -124,6 +126,7 @@ function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state,
 
 
 //EDIT
+
 
 AppointmentsEditCtrl.$inject = ['Appointment', '$stateParams', '$state'];
 function AppointmentsEditCtrl(Appointment, $stateParams, $state) {

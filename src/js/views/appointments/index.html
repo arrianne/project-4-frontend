@@ -9,8 +9,12 @@
       <h4>{{ appointment.specialist}}</h4>
       <h4>{{ appointment.comment}}</h4>
       <h4 ng-repeat="category in appointment.categories">{{ category.name }}</h4>
-
-      <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
+      <div class="col-md-6">
+        <div class="categories">
+          <h5>Category:{{appointment.category_ids}}</h5>
+        </div>
+      </div>
+     <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
     </div>
   </li>
 </ul>

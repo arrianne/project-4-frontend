@@ -2,10 +2,9 @@
 <div class="row">
   <div class="col-md-6">
     <form ng-submit="appointmentsNew.create()">
-
       <div>
         <div id="pac-container">
-          <input id="pac-input" type="text" placeholder="Search Location" autocomplete ng-model="appointmentNew.appointment.location" class="form-control" geometry="appointmentNew.appointment.geometry" choose-listing="appointmentNew.chooseListing(place)">
+          <input id="pac-input" type="text" placeholder="Search Location" autocomplete ng-model="appointmentsNew.appointment.location" class="form-control" lat="appointmentsNew.appointment.lat" lng="appointmentsNew.appointment.lng" choose-listing="appointmentNew.chooseListing(place)">
         </div>
       </div>
 
