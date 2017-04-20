@@ -3,4 +3,5 @@
 
 <ul>
   <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment }}</li>
+  <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
 </ul>

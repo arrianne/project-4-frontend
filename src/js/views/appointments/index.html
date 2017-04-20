@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <ul class="row">
-  <li ng-repeat="appointment in appointmentsIndex.all" class="col-md-6">
+  <li ng-if="main.isAuthenticated()" ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-6">
     <div class="appointment">
       <h3>{{ appointment.location }}</h3>
       <h4>{{ appointment.lat}}</h4>
@@ -9,7 +9,7 @@
       <h4>{{ appointment.specialist}}</h4>
       <h4>{{ appointment.comment}}</h4>
       <h4 ng-repeat="category in appointment.categories">{{ category.name }}</h4>
-      <p>Created by: <strong>{{ appointment.user.username }}</strong></p>
+
       <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
     </div>
   </li>

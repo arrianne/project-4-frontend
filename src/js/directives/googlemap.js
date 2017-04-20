@@ -1,3 +1,5 @@
+/*global google:ignore */
+
 angular.module('diabetesApp')
 .directive('googleMap', googleMap);
 
@@ -13,20 +15,26 @@ function googleMap($window) {
     },
 
     link($scope, element) {
-      console.log($scope.location);
       const map = new $window.google.maps.Map(element[0], {
         zoom: 14,
         center: $scope.center,
         scrollwheel: false
       });
 
-      new $window.google.maps.Marker({
-        position: $scope.center,
+
+      console.log($scope.appointment);
+
+
+      const locationMarker = new $window.google.maps.Marker({
         map: map,
-        animation: $window.google.maps.Animation.BOUNCE
+        animation: google.maps.Animation.DROP,
+        position: {lat}
       });
+
+
     }
 
   };
   return directive;
+
 }

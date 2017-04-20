@@ -28,37 +28,39 @@ function appointmentMap($window) {
        animation: google.maps.Animation.DROP
      });
 
-     function getLocation() {
 
-       const locationMarker = new $window.google.maps.Marker({
-         map: map,
-         animation: google.maps.Animation.DROP
-       });
 
-       if (navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition((position) => {
-           var pos = {
-             lat: position.coords.latitude,
-             lng: position.coords.longitude
-           };
+    //  function getLocation() {
+     //
+    //    const locationMarker = new $window.google.maps.Marker({
+    //      map: map,
+    //      animation: google.maps.Animation.DROP
+    //    });
+     //
+    //    if (navigator.geolocation) {
+    //      navigator.geolocation.getCurrentPosition((position) => {
+    //        var pos = {
+    //          lat: position.coords.latitude,
+    //          lng: position.coords.longitude
+    //        };
+     //
+    //        locationMarker.setPosition(pos);
+    //        map.setCenter(pos);
+    //      }, function() {
+    //        handleLocationError(true, locationMarker, map.getCenter());
+    //      });
+    //    } else {
+    //    // Browser doesn't support Geolocation
+    //      handleLocationError(false, locationMarker, map.getCenter());
+    //    }
+     //
+    //    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    //      locationMarker.setPosition(pos);
+    //    }
 
-           locationMarker.setPosition(pos);
-           map.setCenter(pos);
-         }, function() {
-           handleLocationError(true, locationMarker, map.getCenter());
-         });
-       } else {
-       // Browser doesn't support Geolocation
-         handleLocationError(false, locationMarker, map.getCenter());
-       }
+    //  }
 
-       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-         locationMarker.setPosition(pos);
-       }
-
-     }
-
-      getLocation();
+      // getLocation();
 
       $scope.$watch('chosenLocation', () => {
         if($scope.chosenLocation && $scope.chosenLocation.lat && $scope.chosenLocation.lng) {

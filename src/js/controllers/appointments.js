@@ -10,19 +10,14 @@ angular
 //index
 
 
-AppointmentsIndexCtrl.$inject = ['Appointment', 'Category'];
-function AppointmentsIndexCtrl(Appointment, Category) {
+AppointmentsIndexCtrl.$inject = ['Appointment', 'User', 'Category', '$scope', '$auth'];
+function AppointmentsIndexCtrl(Appointment, User, Category, $scope, $auth) {
   const vm = this;
+  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
   vm.all = Appointment.query();
   vm.categories = Category.query();
-
-//getting categories showing
-//   function getCategories() {
-//     Category
-//     .query
-//   }
-// }
+  console.log(vm.currentUser);
 
 }
 
@@ -30,12 +25,14 @@ function AppointmentsIndexCtrl(Appointment, Category) {
 
 //new
 
-AppointmentsNewCtrl.$inject = ['Appointment', 'Category', 'User', '$state', '$scope'];
-function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope) {
+AppointmentsNewCtrl.$inject = ['Appointment', 'Category', 'User', '$state', '$scope', '$auth'];
+function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope, $auth) {
   const vm = this;
+  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
   vm.appointment = {};
   vm.users = User.query();
   vm.categories = Category.query();
+
 
   function appointmentsCreate() {
     Appointment
@@ -73,15 +70,19 @@ function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state,
   const vm = this;
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
+  console.log(vm.currentUser);
+
   vm.appointment = Appointment.get($stateParams);
 
-  vm.location = {
-    lat: vm.appointment.lat,
-    lng: vm.appointment.lng
-  };
-  
+  console.log(vm.appointment);
 
-
+  // Appointment.get($stateParams)
+  //   .$promise
+  //   .then((appointment) => {
+  //     vm.appointment = appointment;
+  //   });
+  //
+  // console.log(vm.appointment);
 
   function appointmentsDelete() {
     vm.appointment
