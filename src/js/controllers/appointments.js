@@ -3,7 +3,7 @@ angular
   .controller('AppointmentsIndexCtrl', AppointmentsIndexCtrl)
   .controller('AppointmentsNewCtrl', AppointmentsNewCtrl)
   .controller('AppointmentsShowCtrl', AppointmentsShowCtrl)
-  .controller('AppointmentsEditCtrl', AppointmentsEditCtrl)
+  .controller('AppointmentsEditCtrl', AppointmentsEditCtrl);
 
 
 
@@ -82,6 +82,11 @@ function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state,
       vm.appointment = appointment;
 
       vm.appointment.ical = Calendar.ical(vm.appointment);
+      vm.appointment.google = Calendar.google(vm.appointment);
+      vm.appointment.yahoo = Calendar.yahoo(vm.appointment);
+      vm.appointment.outlook = Calendar.outlook(vm.appointment);
+
+      console.log(vm.appointment.ical);
     });
 
   function appointmentsDelete() {
