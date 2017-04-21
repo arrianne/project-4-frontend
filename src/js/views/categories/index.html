@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <h1>categories</h1>
 <ul>
-  <li><a ui-sref="categoriesShow({ id: category.id })" ng-repeat="category in categoriesIndex.all"><img ng-src="{{ category.image }}"></a></li>
-
+  <div class="container">
+   <li><a ui-sref="categoriesShow({ id: category.id })" ng-repeat="category in categoriesIndex.all"><img class="image" ng-src="{{ category.image }}"></a></li>
+  </div>
 </ul>

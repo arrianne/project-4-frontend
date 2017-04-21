@@ -3,7 +3,8 @@ angular
   .controller('AppointmentsIndexCtrl', AppointmentsIndexCtrl)
   .controller('AppointmentsNewCtrl', AppointmentsNewCtrl)
   .controller('AppointmentsShowCtrl', AppointmentsShowCtrl)
-  .controller('AppointmentsEditCtrl', AppointmentsEditCtrl);
+  .controller('AppointmentsEditCtrl', AppointmentsEditCtrl)
+
 
 
 
@@ -67,24 +68,21 @@ function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope, $auth)
 //SHOW
 
 
-AppointmentsShowCtrl.$inject = ['Appointment', 'User', 'Category', '$stateParams', '$state', '$auth'];
-function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state, $auth) {
+AppointmentsShowCtrl.$inject = ['Appointment', 'User', 'Category', '$stateParams', '$state', '$auth', 'Calendar'];
+function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state, $auth, Calendar) {
   const vm = this;
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
   console.log(vm.currentUser);
 
-  vm.appointment = Appointment.get($stateParams);
+  Appointment.get($stateParams)
+    .$promise
+    .then((appointment) => {
+      appointment.start = new Date(appointment.start);
+      vm.appointment = appointment;
 
-  console.log(vm.appointment);
-
-  // Appointment.get($stateParams)
-  //   .$promise
-  //   .then((appointment) => {
-  //     vm.appointment = appointment;
-  //   });
-  //
-  // console.log(vm.appointment);
+      vm.appointment.ical = Calendar.ical(vm.appointment);
+    });
 
   function appointmentsDelete() {
     vm.appointment
@@ -125,6 +123,7 @@ function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state,
 
 
 
+
 //EDIT
 
 
@@ -136,7 +135,7 @@ function AppointmentsEditCtrl(Appointment, $stateParams, $state) {
     .$promise
     .then((appointment) => {
       vm.appointment = appointment;
-      vm.appointment.date_time = new Date(appointment.date_time);
+      vm.appointment.start = new Date(appointment.start);
     });
 
   function appointmentsUpdate() {
