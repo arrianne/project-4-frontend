@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<ul class="list-unstyled">
-  <li id="appIndex" ng-if="main.isAuthenticated()" ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-6">
-    <div class="container">
-      <div class="row">
-        <h3>{{ appointment.title }}</h3>
-        <h4>{{ appointment.start}}</h4>
-
-        <ul class="list-unstyled">
-          <li ng-repeat="category in appointment.categories"><img class="img_index" ng-src="{{category.image}}" alt=""></li>
-        </ul>
-
-       <button class="btn" ui-sref="appointmentsShow({id: appointment.id})">View</button>
-      </div>
-    </div>
-  </li>
-</ul>
-
 <h2>PAST</h2>
 <ul class="list-unstyled">
   <li id="appPastIndex" ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-6" ng-if="appointmentsIndex.isPast(appointment)">

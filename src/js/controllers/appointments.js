@@ -31,6 +31,7 @@ function AppointmentsIndexCtrl(Appointment, User, Category, $scope, $auth) {
 
 
 
+
 //new
 
 

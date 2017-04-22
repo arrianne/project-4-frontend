@@ -17,6 +17,7 @@ function MainCtrl($rootScope, $state, $auth) {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     if($auth.getPayload()) vm.currentUser = $auth.getPayload();
+    vm.isNavCollapsed = true;
   });
 
   const protectedStates = ['appointmentsNew', 'appointmentsEdit', 'appointmentsDelete', 'appointmentsShow', 'categoriesIndex', 'categoriesShow'];

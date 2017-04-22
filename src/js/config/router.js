@@ -12,9 +12,15 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       templateUrl: 'js/views/static/home.html'
     })
-    .state('appointmentsIndex', {
-      url: '/appointments',
-      templateUrl: 'js/views/appointments/index.html',
+
+    .state('appointmentsFuture', {
+      url: '/appointments/future',
+      templateUrl: 'js/views/appointments/future.html',
+      controller: 'AppointmentsIndexCtrl as appointmentsIndex'
+    })
+    .state('appointmentsPast', {
+      url: '/appointments/past',
+      templateUrl: 'js/views/appointments/past.html',
       controller: 'AppointmentsIndexCtrl as appointmentsIndex'
     })
     .state('appointmentsNew', {
