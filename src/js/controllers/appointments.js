@@ -20,6 +20,12 @@ function AppointmentsIndexCtrl(Appointment, User, Category, $scope, $auth) {
   vm.categories = Category.query();
   console.log(vm.currentUser);
 
+  function isPast(appointment) {
+    const today = new Date().getTime();
+    const appointmentTime = new Date(appointment.start).getTime();
+    return appointmentTime < today;
+  }
+  vm.isPast = isPast;
 }
 
 
@@ -96,6 +102,8 @@ function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state,
   }
 
   vm.delete = appointmentsDelete;
+
+
 
 
   function addCategory() {

@@ -18,3 +18,24 @@
     </div>
   </li>
 </ul>
+
+<h2>PAST</h2>
+<ul class="list-unstyled">
+  <li ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-6" ng-if="appointmentsIndex.isPast(appointment)">
+    <div class="appointment">
+      <h3>{{ appointment.location }}</h3>
+      <h4>{{ appointment.lat}}</h4>
+      <h4>{{ appointment.lng}}</h4>
+      <h4>{{ appointment.date_time}}</h4>
+      <h4>{{ appointment.specialist}}</h4>
+      <h4>{{ appointment.comment}}</h4>
+      <h4 ng-repeat="category in appointment.categories">{{ category.name }}</h4>
+      <div class="col-md-6">
+        <div class="categories">
+          <h5>Category:{{appointment.category_ids}}</h5>
+        </div>
+      </div>
+     <button ui-sref="appointmentsShow({id: appointment.id})">View</button>
+    </div>
+  </li>
+</ul>

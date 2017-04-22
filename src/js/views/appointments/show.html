@@ -8,7 +8,7 @@
       <h4>{{ appointmentsShow.appointment.specialist}}</h4>
       <h4>{{ appointmentsShow.appointment.comment}}</h4>
       <h4>{{ appointmentsShow.appointment.category_ids}}</h4>
-<a href="https://citymapper.com/directions?endcoord={{appointmentsShow.appointment.lat}}%2C{{appointmentsShow.appointment.lng}}&endname={{appointmentsShow.appointment.location}}" target="_blank">Get directions</a>
+      <a href="https://citymapper.com/directions?endcoord={{appointmentsShow.appointment.lat}}%2C{{appointmentsShow.appointment.lng}}&endname={{appointmentsShow.appointment.location}}" target="_blank">Get directions</a>
       {{appointmentsShow.appointment.lat}}
       <google-map appointment="appointmentsShow.appointment" ng-if="appointmentsShow.appointment.$resolved"></google-map>
       <p>Created by: <strong>{{ appointmentsShow.appointment.user.username }}</strong></p>
@@ -22,12 +22,10 @@
     </div>
   </div>
 
-  {{ appointmentsShow.appointment.ical }}
-  <a href="{{ appointmentsShow.appointment.ical }}" target="__blank">Appointment calender</a>
-   <!-- <a href="appointmentShow.appointment.ical">Add appointment to ical</a>
-   <a ng-click="appointmentShow.('yahoo')">Add appointment to yahoo</a>
-   <a ng-click="appointmentShow.addToCalendar('google')">Add appointment to google</a>
-   <a ng-click="appointmentShow.addToCalendar('outlook')">Add appointment to outlook</a> -->
+  <!-- {{ appointmentsShow.appointment.ical }} -->
+    <a href="{{ appointmentsShow.appointment.ical }}" target="__blank">Add to ical</a>
+    <a href="{{ appointmentsShow.appointment.yahoo }}" target="__blank">Add to yahoo</a>
+    <a href="{{ appointmentsShow.appointment.google }}" target="__blank">Add to google</a>
+    <a href="{{ appointmentsShow.appointment.outlook }}" target="__blank">Add to outlook</a>
 
-  <!-- will add links to different calendars here -->
-</div>
+  </div>
