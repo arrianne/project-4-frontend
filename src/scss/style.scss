@@ -63,24 +63,24 @@ h4, h3 {
 
 #appIndex {
   background: #BDF8FF;
-  height: 150px;
+  height: 200px;
   display: block;
 }
 
 #appIndex:nth-child(odd) {
    background: #e6fcff;
-   height: 150px;
+   height: 200px;
    display: block;
  }
 #appPastIndex {
   background: #BDF8FF;
-  height: 150px;
+  height: 200px;
   display: block;
 }
 
 #appPastIndex:nth-child(odd) {
    background: #e6fcff;
-   height: 150px;
+   height: 200px;
    display: block;
  }
 
@@ -93,4 +93,8 @@ h4, h3 {
   border: 3px solid #00C5DF;
   padding: 10px;
   border-radius: 10%;
+}
+
+.img_index {
+  height: 90px;
 }

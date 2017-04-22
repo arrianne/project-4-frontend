@@ -18,6 +18,7 @@ function AppointmentsIndexCtrl(Appointment, User, Category, $scope, $auth) {
 
   vm.all = Appointment.query();
   vm.categories = Category.query();
+  console.log(vm.all);
   console.log(vm.currentUser);
 
   function isPast(appointment) {

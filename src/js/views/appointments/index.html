@@ -5,12 +5,11 @@
       <div class="row">
         <h3>{{ appointment.title }}</h3>
         <h4>{{ appointment.start}}</h4>
-        <!-- <h4 ng-repeat="category in appointment.categories">{{ category.name }}</h4> -->
-        <div class="col-md-6">
-          <div class="categories">
-            <h5><img class="image" ng-src="{{ category.image }}"></h5>
-          </div>
-        </div>
+
+        <ul class="list-unstyled">
+          <li ng-repeat="category in appointment.categories"><img class="img_index" ng-src="{{category.image}}" alt=""></li>
+        </ul>
+
        <button class="btn" ui-sref="appointmentsShow({id: appointment.id})">View</button>
       </div>
     </div>
