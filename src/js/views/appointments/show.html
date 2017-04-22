@@ -13,7 +13,7 @@
       <google-map appointment="appointmentsShow.appointment" ng-if="appointmentsShow.appointment.$resolved"></google-map>
       <p>Created by: <strong>{{ appointmentsShow.appointment.user.username }}</strong></p>
       <button ui-sref="appointmentsEdit({id: appointmentsShow.appointment.id})" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Edit</button>
-      <button ng-click="appointmentsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Delete</button>
+      <button class="btn" ng-click="appointmentsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Delete</button>
     </div>
   </div>
   <div class="col-md-6">

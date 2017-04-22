@@ -19,5 +19,78 @@
   color: white;
 }
 
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
 
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color:  #00C5DF;
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+}
+
+
+.home {
+  background-color: #00C5DF;
+  margin: 0 auto;
+  h1 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 150px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 250px;
+  }
+
+}
+
+
+
+
+h4, h3 {
+  color: #727272;
+}
 //
+.container {
+    display: block;
+    width:100%;
+    margin:0 auto;
+    max-height: 80px;
+}
+
+#appIndex {
+  background: #BDF8FF;
+  height: 150px;
+  display: block;
+}
+
+#appIndex:nth-child(odd) {
+   background: #e6fcff;
+   height: 150px;
+   display: block;
+ }
+#appPastIndex {
+  background: #BDF8FF;
+  height: 150px;
+  display: block;
+}
+
+#appPastIndex:nth-child(odd) {
+   background: #e6fcff;
+   height: 150px;
+   display: block;
+ }
+
+//buttons
+
+.btn {
+  background-color: white;
+  color: #00C5DF;
+  width: 80px;
+  border: 3px solid #00C5DF;
+  padding: 10px;
+  border-radius: 10%;
+}
