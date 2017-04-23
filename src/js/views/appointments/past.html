@@ -1,6 +1,6 @@
 <h2>PAST</h2>
 <ul class="list-unstyled">
-  <li id="appPastIndex" ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-6" ng-if="appointmentsIndex.isPast(appointment)">
+  <li id="appPastIndex" ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-12" ng-if="appointmentsIndex.isPast(appointment)">
     <div class="row">
       <h3>{{ appointment.location }}</h3>
       <h4>{{ appointment.lat}}</h4>

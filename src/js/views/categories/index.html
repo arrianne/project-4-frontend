@@ -2,6 +2,10 @@
 <h1>categories</h1>
 <ul class="list-unstyled">
   <div class="container">
-   <li><a ui-sref="categoriesShow({ id: category.id })" ng-repeat="category in categoriesIndex.all"><img class="image" ng-src="{{ category.image }}"></a></li>
+    <div class="category_index_row">
+      <!-- <div class="col-sm-4"> -->
+       <li><a ui-sref="categoriesShow({ id: category.id })" ng-repeat="category in categoriesIndex.all"><img class=class="center-block" ng-src="{{ category.image }}"></a></li>
+     <!-- </div> -->
+    </div>
   </div>
 </ul>
