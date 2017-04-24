@@ -23,9 +23,9 @@ function CategoriesShowCtrl(Category, Appointment, User, $stateParams, $state, $
     .$promise
     .then((category) => {
       vm.category = category;
-      // vm.category.appointments = vm.category.appointments.filter((appointment) => {
-      //   return appointment.user_id === vm.currentUserId;
-      // });
+      vm.category.appointments = vm.category.appointments.filter((appointment) => {
+        return appointment.user_id === vm.currentUserId;
+      });
 
       console.log(vm.category.appointments);
       // console.log(vm.category.appointments.location);

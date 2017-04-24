@@ -2,7 +2,7 @@
 <h1>Future Appointments</h1>
 
 <ul class="list-unstyled">
-  <li id="appIndex" ng-if="main.isAuthenticated()" ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-12">
+  <li id="appIndex" ng-if="!appointmentsIndex.isPast(appointment)" ng-repeat="appointment in appointmentsIndex.currentUser.appointments"  class="col-md-12">
     <h3>{{ appointment.title }}</h3>
     <h4>{{ appointment.start | date : format : short }}</h4>
     <button class="btn" ui-sref="appointmentsShow({id: appointment.id})">View</button>

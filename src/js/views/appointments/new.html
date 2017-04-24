@@ -10,6 +10,8 @@
             </div>
           </div>
 
+          Here: {{ appointmentsNew.appointment }}
+
             <!-- <div class="form-group">
               <label for="location">Location</label>
               <input type="text" class="form-control" autocomplete ng-model="appointmentsNew.appointment.location" geometry="appointmentsNew.appointment.date.geometry" required name="location" id="location" placeholder = "Enter the location of your appointment">
@@ -24,12 +26,17 @@
 
              <div class="form-group">
               <label for="date_time">Date/time</label>
-              <input type="datetime-local" id="date_time" name="date_time" ng-model="appointmentsNew.appointment.date_time">
+              <input type="datetime-local" id="date_time" name="date_time" ng-model="appointmentsNew.appointment.start">
              </div>
 
             <div class="form-group">
               <label for="specialist">Specialist/Doctor (if known)</label>
               <input type="text" id="specialist" name="specialist" ng-model="appointmentsNew.appointment.specialist">
+            </div>
+
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" name="title" ng-model="appointmentsNew.appointment.title">
             </div>
 
             <div class="form-group">

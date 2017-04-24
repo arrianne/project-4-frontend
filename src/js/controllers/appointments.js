@@ -45,6 +45,7 @@ function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope, $auth)
 
 
   function appointmentsCreate() {
+    console.log('about to save', vm.appointment);
     Appointment
       .save({ appointment: vm.appointment })
       .$promise
@@ -59,10 +60,7 @@ function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope, $auth)
     vm.appointment.location = place.name;
     vm.appointment.lat = location.lat;
     vm.appointment.lng = location.lng;
-
-
     $scope.$apply();
-
   }
 
   vm.chooseListing = chooseListing;
@@ -100,7 +98,7 @@ function AppointmentsShowCtrl(Appointment, User, Category, $stateParams, $state,
   function appointmentsDelete() {
     vm.appointment
       .$remove()
-      .then(() => $state.go('appointmentsIndex'));
+      .then(() => $state.go('appointmentsNew'));
   }
 
   vm.delete = appointmentsDelete;

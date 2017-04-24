@@ -5,7 +5,6 @@
     <div class="row">
       <h3>{{ appointment.title }}</h3>
       <h4>{{ appointment.start | date : format : short }}</h4>
-
       <button class="btn" ui-sref="appointmentsShow({id: appointment.id})">View</button>
       <div ng-repeat="category in appointment.categories"><img class="img_index" ng-src="{{category.image}}" alt=""></div>
     </div>

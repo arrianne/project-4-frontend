@@ -14,11 +14,26 @@
 
 //navbar
 
+.navbar-default {
+    background-color: #00C5DF;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   background-color: #00C5DF;
   color: white;
   height: 20px;
+  float:right;
 }
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  
+}
+
 
 .navbar-default .navbar-nav > li > a {
     color: white;
