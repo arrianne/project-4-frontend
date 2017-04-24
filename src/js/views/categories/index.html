@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <h1>categories</h1>
-<ul class="list-unstyled">
+
   <div class="container">
+    <!-- Maybe get rid of this next div-->
     <div class="category_index_row">
-      <!-- <div class="col-sm-4"> -->
-       <li><a ui-sref="categoriesShow({ id: category.id })" ng-repeat="category in categoriesIndex.all"><img class=class="center-block" ng-src="{{ category.image }}"></a></li>
-     <!-- </div> -->
+      <div class="row">
+
+        <div class="col-sm-4">
+        </div>
+
+        <div class="col-sm-4">
+          <ul class="list-unstyled">
+            <li ng-repeat="category in categoriesIndex.all">
+              <a ui-sref="categoriesShow({ id: category.id })">
+                <img class="center-block" ng-src="{{ category.image }}">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-sm-4">
+        </div>
+
+      </div>
     </div>
   </div>
-</ul>

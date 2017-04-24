@@ -48,7 +48,7 @@ function AppointmentsNewCtrl(Appointment, Category, User, $state, $scope, $auth)
     Appointment
       .save({ appointment: vm.appointment })
       .$promise
-      .then(() => $state.go('appointmentsIndex'));
+      .then(() => $state.go('appointmentsFuture'));
   }
 
   vm.create = appointmentsCreate;

@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<div class="row">
-  <div class="col-md-6">
-    <div class="appointment">
+<div class="container">
+ <div class="row">
+  <div class="col-sm-6">
       <h3>{{ appointmentsShow.appointment.location }}</h3>
+      <br>
       <h4>{{ appointmentsShow.appointment.start | date: 'fullDate'}}</h4>
+      <br>
       <h4>{{ appointmentsShow.appointment.start | date: 'shortTime'}}</h4>
+      <br>
       <h4>{{ appointmentsShow.appointment.specialist}}</h4>
+      <br>
       <h4>{{ appointmentsShow.appointment.comment}}</h4>
-      <h4>{{ appointmentsShow.appointment.category_ids}}</h4>
-      <a href="https://citymapper.com/directions?endcoord={{appointmentsShow.appointment.lat}}%2C{{appointmentsShow.appointment.lng}}&endname={{appointmentsShow.appointment.location}}" target="_blank">Get directions</a>
-      {{appointmentsShow.appointment.lat}}
-      <google-map appointment="appointmentsShow.appointment" ng-if="appointmentsShow.appointment.$resolved"></google-map>
-      <p>Created by: <strong>{{ appointmentsShow.appointment.user.username }}</strong></p>
-      <button ui-sref="appointmentsEdit({id: appointmentsShow.appointment.id})" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Edit</button>
-      <button class="btn" ng-click="appointmentsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Delete</button>
-    </div>
+      <br>
+      <a href="{{ appointmentsShow.appointment.ical }}" target="__blank">Add to ical</a>
+      <a href="{{ appointmentsShow.appointment.yahoo }}" target="__blank">Add to yahoo</a>
+      <a href="{{ appointmentsShow.appointment.google }}" target="__blank">Add to google</a>
+      <a href="{{ appointmentsShow.appointment.outlook }}" target="__blank">Add to outlook</a>
+      <br>
+      <button class="btn_show" ui-sref="appointmentsEdit({id: appointmentsShow.appointment.id})" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Edit</button>
+      <button class="btn_show" ng-click="appointmentsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === appointmentsShow.appointment.user.id">Delete</button>
   </div>
-  <div class="col-md-6">
-    <div class="categories">
-      <h5>Category:{{appointment.category_ids}}</h5>
-    </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-5">
+    <a href="https://citymapper.com/directions?endcoord={{appointmentsShow.appointment.lat}}%2C{{appointmentsShow.appointment.lng}}&endname={{appointmentsShow.appointment.location}}" target="_blank">Get directions</a>
+
+    <google-map appointment="appointmentsShow.appointment" ng-if="appointmentsShow.appointment.$resolved"></google-map>
   </div>
+</div>
+
+
 
   <!-- {{ appointmentsShow.appointment.ical }} -->
-    <a href="{{ appointmentsShow.appointment.ical }}" target="__blank">Add to ical</a>
-    <a href="{{ appointmentsShow.appointment.yahoo }}" target="__blank">Add to yahoo</a>
-    <a href="{{ appointmentsShow.appointment.google }}" target="__blank">Add to google</a>
-    <a href="{{ appointmentsShow.appointment.outlook }}" target="__blank">Add to outlook</a>
+
 
   </div>
