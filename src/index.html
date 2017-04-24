@@ -19,6 +19,7 @@
   <body ng-controller="MainCtrl as main" ng-class="main.pageName">
     <header>
       <nav class="navbar navbar-default" role="navigation">
+
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed">
             <span class="sr-only">Toggle navigation</span>
@@ -28,6 +29,8 @@
           </button>
           <a class="navbar-brand" href="home">Punctual.</a>
         </div>
+
+
         <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
           <ul class="nav navbar-nav">
             <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
@@ -42,6 +45,7 @@
         </div>
       </nav>
     </header>
+
     <div class="message" ng-if="main.message">
       <div class="container">{{main.message}}</div>
     </div>

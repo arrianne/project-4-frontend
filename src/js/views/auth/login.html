@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-6">
     <form ng-submit="auth.login()">
       <div class="form-group">
@@ -14,4 +14,18 @@
       <button class="btn">Login</button>
     </form>
   </div>
+</div> -->
+
+
+
+  <div class="login">
+    <div class="header">
+      <span class="text">LOGIN</span>
+      <span class="loader"></span>
+    </div>
+    <form ng-submit="auth.login()" class="form">
+      <input ng-model="auth.credentials.email" class="input" type="text", placeholder="Email">
+      <input ng-model="auth.credentials.password" class="input" type="password" placeholder="Password">
+      <button class="btn" type="submit">Login</button>
+    </form>
 </div>
