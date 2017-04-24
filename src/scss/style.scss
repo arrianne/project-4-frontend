@@ -23,6 +23,17 @@ img {
     font-size: 5rem;
   }
 }
+
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #00c5df;
+    background-color: #00c5df;
+    a{
+      color: white;
+    }
+}
+
+
 //navbar
 
 header {
@@ -33,6 +44,7 @@ header {
   height: 50px;
   text-transform: uppercase;
   z-index: 1;
+  background-color: #00C5DF;
   nav {
     background-color: #00C5DF;
     div.navbar-header {
@@ -68,6 +80,18 @@ header {
     }
   }
 
+a{
+  color: #00C5DF;
+}
+
+p{
+  color: #00C5DF;
+}
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+
 main {
   padding-top: 75px;
 }
@@ -96,7 +120,9 @@ h1 {
 }
 
 
-
+h1 {
+  font-size: 5em;
+}
 
 h4 {
   color: #727272;
@@ -156,12 +182,12 @@ h3 {
 .btn_show {
   background-color: white;
   color: #00C5DF;
-  width: 80px;
+
   border: 3px solid #00C5DF;
   padding: 10px;
   border-radius: 10%;
   float: left;
-  margin-top: 30%;
+  margin-top: 6%;
   margin-right: 5%;
 }
 

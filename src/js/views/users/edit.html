@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<h1>Edit</h1>
-<div class="row">
-  <div class="col-md-6">
-    <form ng-submit="usersEdit.update()">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" ng-model="usersEdit.user.username">
-
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" ng-model="usersEdit.user.email">
-
-      <label for="medication">Medication</label>
-      <input type="text" id="medication" name="medication" ng-model="usersEdit.user.medication">
-
-      <label for="gp_name">GP Name</label>
-      <input type="text" id="gp_name" name="gp_name" ng-model="usersEdit.user.gp_name">
-
-      <label for="gp_address">GP Address</label>
-      <input type="text" id="gp_address" name="gp_address" ng-model="usersEdit.user.gp_address">
-
-      <label for="diagnosis_date">Diagnosis Date</label>
-      <input type="date" id="diagnosis_date" name="diagnosis_date" ng-model="appointmentsNewappointment.diagnosis_date">
-
-      <label for="diabetess_type">Diabetes Type</label>
-      <input type="date" id="diabetes_type" name="diabetes_type" ng-model="appointmentsNewappointment.diabetes_type">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 reg-box">
+      <div class="col-md-12">
+       <form ng-submit="usersEdit.update()">
+        <div class="form-group">
+         <h1>Edit Appointment</h1>
+        </div>
+        <div class="form-group">
+          <label for="username"></label>
+          <input class="btn" type="text" id="username" name="username" ng-model="usersEdit.user.username">
+       </div>
+       <div class="form-group">
+          <label for="email"></label>
+          <input class="btn" type="text" id="email" name="email" ng-model="usersEdit.user.email">
+       </div>
+       <div class="form-group">
+          <label for="medication"></label>
+          <input class="btn" type="text" id="medication" name="medication" ng-model="usersEdit.user.medication">
+       </div>
+       <div class="form-group">
+          <label for="gp_name"></label>
+          <input class="btn" type="text" id="gp_name" name="gp_name" ng-model="usersEdit.user.gp_name">
+       </div>
+       <div class="form-group">
+          <label for="gp_address"></label>
+          <input class="btn" type="text" id="gp_address" name="gp_address" ng-model="usersEdit.user.gp_address">
+      </div>
+      <div class="form-group">
+          <label for="diagnosis_date"></label>
+          <input class="btn" type="date" id="diagnosis_date" name="diagnosis_date" ng-model="appointmentsNewappointment.diagnosis_date">
+      </div>
+      <div class="form-group">
+          <label for="diabetess_type"></label>
+          <input class="btn" type="date" id="diabetes_type" name="diabetes_type" ng-model="appointmentsNewappointment.diabetes_type">
+      </div>
       <button class="btn">Update</button>
     </form>
-  </div>
+   </div>
+ </div>
+</div>
 </div>
