@@ -1,67 +1,44 @@
 <!DOCTYPE html>
-<div class="loginForm">
 
-</div>
 <div class="container">
-
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <form ng-submit="appointmentsNew.create()">
-          <div class="form-group">
-            <h1>New Appointment</h1>
-            <div id="pac-container">
-              <input id="pac-input" type="text" placeholder="Search Location" autocomplete ng-model="appointmentsNew.appointment.location" class="form-control" lat="appointmentsNew.appointment.lat" lng="appointmentsNew.appointment.lng" choose-listing="appointmentNew.chooseListing(place)">
-            </div>
-          </div>
-
-
-            <!-- <div class="form-group">
-              <label for="location">Location</label>
-              <input type="text" class="form-control" autocomplete ng-model="appointmentsNew.appointment.location" geometry="appointmentsNew.appointment.date.geometry" required name="location" id="location" placeholder = "Enter the location of your appointment">
-              <div ng-messages="newAppointment.newAppointmentForm.location.$error" ng-show="newAppointment.newAppointmentForm.$submitted || newAppointment.newAppointmentForm.location.$touched" role="alert">
-                <p ng-message="required">Address is required.</p>
-              </div>
-              <input type="hidden" ng-model="appointment.lat" name="lat">
-              <input type="hidden" ng-model="appointment.lng" name="lng">
-            </div> -->
-
-            <!-- <appointment-map></appointment-map> -->
-
-             <div class="form-group">
-              <label class="form-control" for="date_time">Date/time</label>
-              <input type="datetime-local" id="date_time" name="date_time" ng-model="appointmentsNew.appointment.start">
-             </div>
-
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 reg-box">
+        <div class="col-md-12">
+          <form ng-submit="appointmentsNew.create()">
             <div class="form-group">
-              <label class="form-control" for="specialist">Specialist/Doctor (if known)</label>
-              <input type="text" id="specialist" name="specialist" ng-model="appointmentsNew.appointment.specialist">
-            </div>
-
-            <div class="form-group">
-              <label for="title">Title</label>
-              <input class="btn" type="text" id="title" name="title" ng-model="appointmentsNew.appointment.title">
-            </div>
-
-            <div class="form-group">
-              <label for="comment">Any comments/reminders?</label>
-              <input class="btn" type="text" id="comment" name="comment" ng-model="appointmentsNew.appointment.comment">
-            </div>
-            <div class="row">
-              <div ng-repeat="category in appointmentsNew.categories" class="checkboxes col-sm-3">
-                <input id="{{ category.name }}" class="btn" type="checkbox" name="categories" checklist-model="appointmentsNew.appointment.category_ids" checklist-value="category.id">
-                <label for="{{ category.name }}"><img ng-src="{{ category.image }}"></label>
+              <h1>New Appointment</h1>
+              <div id="pac-container">
+                <input class="btn" type="text" placeholder="Search Location" autocomplete ng-model="appointmentsNew.appointment.location" class="form-control" lat="appointmentsNew.appointment.lat" lng="appointmentsNew.appointment.lng" choose-listing="appointmentNew.chooseListing(place)">
               </div>
             </div>
-          <button class="btn">Add appointment</button>
-        </form>
-    </div>
-</div>
+               <div class="form-group">
+                <label for="date_time"></label>
+                <input class="btn" type="datetime-local" placeholder="Search Location" id="date_time" name="date_time" ng-model="appointmentsNew.appointment.start">
+               </div>
 
-</div>
+              <div class="form-group">
+                <label for="specialist"></label>
+                <input class="btn" type="text" placeholder="Specialist/Doctor (if known)" id="specialist" name="specialist" ng-model="appointmentsNew.appointment.specialist">
+              </div>
 
-  <!--
-        <label for="category_ids"> Appointment category </label><br>
-          <select ng-model="appointmentsNew.appointment.category_ids">
-            <option ng-repeat="category in appointmentsNew.categories" name="category_ids" value="{{category.ids}}">{{category.name}}</option>
-              </select> -->
+              <div class="form-group">
+                <label for="title"></label>
+                <input class="btn" type="text" placeholder="Title" id="title" name="title" ng-model="appointmentsNew.appointment.title">
+              </div>
+
+              <div class="form-group">
+                <label for="comment"></label>
+                <input class="btn" rows="3" type="text" placeholder="Any comments/reminders?" id="comment" name="comment" ng-model="appointmentsNew.appointment.comment">
+              </div>
+              <div class="row">
+                <div ng-repeat="category in appointmentsNew.categories" class="checkboxes col-sm-3">
+                  <input id="{{ category.name }}" class="btn" type="checkbox" name="categories" checklist-model="appointmentsNew.appointment.category_ids" checklist-value="category.id">
+                  <label for="{{ category.name }}"><img ng-src="{{ category.image }}"></label>
+                </div>
+              </div>
+            <button class="btn">Add appointment</button>
+          </form>
+      </div>
+  </div>
+ </div>
+</div>

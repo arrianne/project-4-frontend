@@ -1,13 +1,24 @@
 <div class="container">
- <div class="row">
-  <div class="col-sm-6">
-    <h1>{{ categoriesShow.category.name }}</h1>
-    <img class="col-sm-6" ng-src="{{ categoriesShow.category.image}}">
-    <p>{{ categoriesShow.category.description }}</p>
-      <ul>
-        <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment }}
-        <button ui-sref="appointmentsShow({id: appointment.id})">View</button></li>
-      </ul>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+       <div class="col-md-12">
+          <h1>{{ categoriesShow.category.name }}</h1>
+          <img class="col-sm-6" ng-src="{{ categoriesShow.category.image}}">
+          <p>{{ categoriesShow.category.description }}</p>
+        </div>
+       </div>
+      </div>
     </div>
-  </div>
-</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 reg-box">
+           <div class="col-md-12">
+              <ul class="unstyled">
+                <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment.title }}
+                <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment.start }}
+                <button class="btn" ui-sref="appointmentsShow({id: appointment.id})">View</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>

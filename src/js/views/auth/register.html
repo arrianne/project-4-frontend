@@ -1,28 +1,62 @@
-<div class="row">
-  <div class="col-md-6">
+<div class="container">
+ <div class="row">
+   <div class="col-md-6 col-md-offset-3 reg-box">
+     <div class="col-md-12">
+       <form ng-submit="auth.register()">
+         <div class="form-group">
+          <h1>Register.</h1>
+         </div>
+         <div class="form-group">
+           <label></label>
+           <input class="btn" placeholder="Username" type="text" ng-model="auth.user.username">
+         </div>
+
+         <div class="form-group">
+           <label></label>
+           <input class="btn" placeholder="Email address" type="text" ng-model="auth.user.email">
+         </div>
+
+         <div class="form-group">
+           <label></label>
+           <input class="btn" placeholder="Password" type="password" ng-model="auth.user.password">
+         </div>
+
+         <div class="form-group">
+           <label></label>
+           <input class="btn" placeholder="Password confirmation" type="password" ng-model="auth.user.password_confirmation">
+         </div>
+
+         <button class="btn">Register</button>
+       </form>
+     </div>
+   </div>
+  <!-- <div class="col-md-4 col-md-offset-3">
     <form ng-submit="auth.register()">
-      <h1>Register</h1>
-      <div>
-        <label>Username</label>
-        <input type="text" ng-model="auth.user.username">
+      <div class="form-group">
+       <h1>Register</h1>
+      </div>
+      <div class="form-group">
+        <label></label>
+        <input class="btn" placeholder="Username" type="text" ng-model="auth.user.username">
       </div>
 
-      <div>
-        <label>Email</label>
-        <input type="text" ng-model="auth.user.email">
+      <div class="form-group">
+        <label></label>
+        <input class="btn" placeholder="Email address" type="text" ng-model="auth.user.email">
       </div>
 
-      <div>
-        <label>Password</label>
-        <input type="password" ng-model="auth.user.password">
+      <div class="form-group">
+        <label></label>
+        <input class="btn" placeholder="Password" type="password" ng-model="auth.user.password">
       </div>
 
-      <div>
-        <label>Password Confirmation</label>
-        <input type="password" ng-model="auth.user.password_confirmation">
+      <div class="form-group">
+        <label></label>
+        <input class="btn" placeholder="Password confirmation" type="password" ng-model="auth.user.password_confirmation">
       </div>
 
-      <button>Register</button>
+      <button class="btn">Register</button>
     </form>
-  </div>
+  </div> -->
+ </div>
 </div>

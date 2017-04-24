@@ -2,19 +2,22 @@
 
 
 
+
   <div class="container">
-    <!-- Maybe get rid of this next div-->
-    <div class="category_index_row">
-       <div class="row">
-         <ul class="list-unstyled">
-           <h1>categories</h1>
-            <li class="col-md-3" ng-repeat="category in categoriesIndex.all">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 reg-box">
+        <div class="col-md-12">
+          <ul class="list-unstyled">
+          <h1>Categories.</h1>
+          
+            <li class="col-md-6" ng-repeat="category in categoriesIndex.all">
               <a ui-sref="categoriesShow({ id: category.id })">
-                <img class="center-block" ng-src="{{ category.image }}">
+                <img class="img" ng-src="{{ category.image }}">
               </a>
             </li>
           </ul>
         </div>
      </div>
+   </div>
 
 </div>

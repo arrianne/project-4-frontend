@@ -13,9 +13,17 @@
 
 img {
   max-width: 100%;
+  border-style: none;
+  padding: 15px;
 }
 
-
+.reg-box {
+  border: 3px solid #00C5DF;
+  padding: 5%;
+  h1{
+    font-size: 5rem;
+  }
+}
 //navbar
 
 header {
@@ -30,16 +38,10 @@ header {
       background-color: #00C5DF;
       color: white;
       z-index: fixed;
-      button {
-        span {
-
-        }
-      }
-
       a{
         color:white;
         font-size: 16px;
-
+        float: right;
       }
     }
 
@@ -74,6 +76,7 @@ h1 {
   color:  #00C5DF;
   text-align: center;
   vertical-align: middle;
+  font-size: 5em;
 }
 
 
@@ -144,6 +147,7 @@ h3 {
   padding: 10px;
   border-radius: 10%;
   float: right;
+  margin-top: 20px;
 }
 .btn_show {
   background-color: white;
@@ -158,8 +162,10 @@ h3 {
 }
 
 .img_index {
-  height: 100px;
+  height: 70px;
   float: right;
+  padding-top: 20px;
+  padding-left: 5px;
 }
 
 
