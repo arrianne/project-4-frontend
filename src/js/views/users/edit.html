@@ -2,28 +2,28 @@
 <h1>Edit</h1>
 <div class="row">
   <div class="col-md-6">
-    <form ng-submit="appointmentsNew.create()">
+    <form ng-submit="usersEdit.update()">
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" ng-model="usersEdituser.username">
+      <input type="text" id="username" name="username" ng-model="usersEdit.user.username">
 
       <label for="email">Email</label>
-      <input type="text" id="email" name="email" ng-model="usersEdituser.email">
+      <input type="text" id="email" name="email" ng-model="usersEdit.user.email">
 
       <label for="medication">Medication</label>
-      <input type="text" id="medication" name="medication" ng-model="usersEdituser.medication">
+      <input type="text" id="medication" name="medication" ng-model="usersEdit.user.medication">
 
       <label for="gp_name">GP Name</label>
-      <input type="text" id="gp_name" name="gp_name" ng-model="usersEdituser.gp_name">
+      <input type="text" id="gp_name" name="gp_name" ng-model="usersEdit.user.gp_name">
 
       <label for="gp_address">GP Address</label>
-      <input type="text" id="gp_address" name="gp_address" ng-model="usersEdituser.gp_address">
+      <input type="text" id="gp_address" name="gp_address" ng-model="usersEdit.user.gp_address">
 
       <label for="diagnosis_date">Diagnosis Date</label>
       <input type="date" id="diagnosis_date" name="diagnosis_date" ng-model="appointmentsNewappointment.diagnosis_date">
 
       <label for="diabetess_type">Diabetes Type</label>
       <input type="date" id="diabetes_type" name="diabetes_type" ng-model="appointmentsNewappointment.diabetes_type">
-      <button>Update</button>
+      <button class="btn">Update</button>
     </form>
   </div>
 </div>

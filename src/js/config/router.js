@@ -49,7 +49,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'AuthCtrl as auth'
     })
     .state('usersShow', {
-      url: '/users',
+      url: '/users/',
       templateUrl: 'js/views/users/show.html',
       controller: 'UsersShowCtrl as usersShow'
     })

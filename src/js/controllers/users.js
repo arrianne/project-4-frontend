@@ -26,19 +26,17 @@ UsersEditCtrl.$inject = ['User', 'Appointment', '$stateParams', '$state'];
 function UsersEditCtrl(User, Appointment, $stateParams, $state) {
   const vm = this;
 
-  User.get($stateParams).$promise.then((user) => {
-    vm.user = user;
-    vm.user.date = new Date(user.date);
-  });
+    vm.update= updateUser;
+    vm.user = User.get($stateParams);
+   //updates the user
+   console.log(vm.user);
+    function updateUser(){
+       console.log('cool');
 
-  vm.users = User.query();
+       User
+         .update({id: vm.user.id, user: vm.user })
+         .$promise
+         .then((user) => $state.go('usersShow', { id: vm.user.id }));
 
-  function usersUpdate() {
-    User
-      .update({id: vm.user.id, user: vm.user })
-      .$promise
-      .then(() => $state.go('usersShow', { id: vm.user.id }));
-  }
-
-  vm.update = usersUpdate;
+     }
 }
