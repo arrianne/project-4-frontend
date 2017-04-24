@@ -9,14 +9,20 @@
        </div>
       </div>
     </div>
+
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 reg-box">
            <div class="col-md-12">
-              <ul class="unstyled">
-                <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment.title }}
-                <li ng-repeat="appointment in categoriesShow.category.appointments">{{ appointment.start }}
-                <button class="btn" ui-sref="appointmentsShow({id: appointment.id})">View</button></li>
+             <ul class="list-unstyled">
+              <li ng-repeat="appointment in categoriesShow.category.appointments | orderBy:'start': true" id="appIndex">
+                  <div class="col-md-6">
+                    <h3>{{ appointment.title }}</h3>
+                    <h4>{{ appointment.start | date : format : short }}</h4>
+                  </div>
+                  <div class="col-md-6">
+                   <button class="btn" ui-sref="appointmentsShow({id: appointment.id})">View</button></li>
+                 </div>
               </ul>
             </div>
           </div>

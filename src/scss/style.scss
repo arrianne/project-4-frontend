@@ -14,7 +14,6 @@
 img {
   max-width: 100%;
   border-style: none;
-  padding: 15px;
 }
 
 .reg-box {
@@ -33,7 +32,9 @@ header {
   right: 0;
   height: 50px;
   text-transform: uppercase;
+  z-index: 1;
   nav {
+    background-color: #00C5DF;
     div.navbar-header {
       background-color: #00C5DF;
       color: white;
@@ -111,14 +112,17 @@ h3 {
 #appIndex {
   background-color: #BDF8FF;
   height: 200px;
-  display: inline;
+  // display: inline;
   border-right: #BDF8FF;
+  h3 {
+    display: inline-block;
+  }
 }
 
 #appIndex:nth-child(odd) {
    background-color: #e6fcff;
    height: 200px;
-   display: inline;
+  //  display: inline;
    border-left: #e6fcff;
  }
 #appPastIndex {
@@ -168,7 +172,53 @@ h3 {
   padding-left: 5px;
 }
 
-
+.categories {
+  li {
+    cursor: pointer;
+    position: relative;
+    &:after {
+      content: "";
+      background-color: #00c5df;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      top: 35px;
+      left: 30px;
+      bottom: 15px;
+      right: 30px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    p {
+      position: absolute;
+      top: calc(50% + 10px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      z-index: 100;
+      opacity: 0;
+      transition: all 0.3s ease;
+      width: 90%;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      text-transform: capitalize;
+      font-size: 16px;
+    }
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+      p {
+        opacity: 1;
+      }
+    }
+  }
+  img {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
 
 .category_index_row {
   border: 6px solid #BDF8FF;
