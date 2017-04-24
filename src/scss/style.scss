@@ -11,6 +11,10 @@
   padding: 0 50px;
 }
 
+img {
+  max-width: 100%;
+}
+
 
 //navbar
 
@@ -25,6 +29,7 @@ header {
     div.navbar-header {
       background-color: #00C5DF;
       color: white;
+      z-index: fixed;
       button {
         span {
 
@@ -34,7 +39,6 @@ header {
       a{
         color:white;
         font-size: 16px;
-        float: right;
 
       }
     }
@@ -52,7 +56,7 @@ header {
           li {
 
             a {
-              float:right;
+
              }
             }
           }
@@ -61,14 +65,15 @@ header {
     }
   }
 
-
+main {
+  padding-top: 75px;
+}
 
 h1 {
   font-family: 'Playfair Display', serif;
   color:  #00C5DF;
   text-align: center;
   vertical-align: middle;
-  padding: 20px;
 }
 
 
@@ -86,10 +91,7 @@ h1 {
 
 }
 
-.mainNewForm {
-  border: 2px solid blue;
-  max-width: 300px;
-}
+
 
 
 h4 {
@@ -108,9 +110,6 @@ h3 {
   height: 200px;
   display: inline;
   border-right: #BDF8FF;
-
-
-
 }
 
 #appIndex:nth-child(odd) {
@@ -130,6 +129,10 @@ h3 {
    height: 200px;
    display: inline;
  }
+
+
+
+
 
 //buttons
 
@@ -157,56 +160,28 @@ h3 {
 .img_index {
   height: 100px;
   float: right;
-
-
-}
-
-.list_unstyled {
-  display: inline;
-}
-
-.login_form {
-  background-color: #00C5DF;
 }
 
 
 
 .category_index_row {
   border: 6px solid #BDF8FF;
-
   max-width: 800px;
   padding: 5%;
-
   position: absolute;
-  h1 {
+
+   h1 {
     font-family: 'Playfair Display', serif;
     color:  #00C5DF;
     font-size: 5em;
-  }
-
+   }
 }
+
+
+
 
 // new appointment
 
-
-.container {
-
-  padding: 10%;
-  max-width: 800px;
-  height:auto;
-  margin:0 auto;
-
-}
-.centerBlock {
-  display: table;
-  margin: auto;
-}
-
-form{
-    border: 5px solid #e6fcff;
-    margin:0 auto;
-    padding: 10%;
-    max-width: 700px;
 
     h1{
       font-size: 5em;
@@ -219,20 +194,14 @@ form{
     }
 
 
-    label {
-      display: block;
-    }
-    .row {
-      margin: 0 auto;
-    }
-}
+
 
 
 
 
 //login_form
 
-.login {
+.login-form {
   font-family: 'Playfair Display', serif;
   position: absolute;
   top: 50%;
@@ -241,29 +210,52 @@ form{
   width: 20rem;
   height: 20rem;
   padding: 3em;
-  background: hsla(255,255%,255%,1);
   border-radius: 50%;
   overflow: hidden;
   -webkit-transition: all 1s ease;
   transition:all 1s ease;
 }
-.login:hover > .header, .login.clicked > .header {
-  width: 2rem;
+//
+// .login-form > .header, .login-form.clicked > .header {
+//   width: 2rem;
+// }
+//
+// .login-form > .header > .text, .login.clicked > .header > .text {
+//   font-size: 1rem;
+//   -webkit-transform: rotate(-90deg);
+//   transform: rotate(-90deg);
+// }
+
+.bubble {
+  &:hover {
+    .login-form {
+      margin: -10rem 0 0 -20rem;
+      &.behind {
+        width: 40rem;
+      }
+    }
+
+    .login-form > .header, .login.clicked > .header {
+      width: 2rem;
+    }
+
+    .login-form > .header > .text, .login.clicked > .header > .text {
+      font-size: 1rem;
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+  }
 }
-.login:hover > .header > .text, .login.clicked > .header > .text {
-  font-size: 1rem;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-.login.loading > .header {
+
+.login-form.loading > .header {
   width: 20rem;
   -webkit-transition: all 1s ease;
   transition:all 1s ease;
 }
-.login.loading > .header > .text {
+.login-form.loading > .header > .text {
   display: none;
 }
-.login.loading > .header > .loader {
+.login-form.loading > .header > .loader {
   display: block;
 }
 .header {
@@ -319,4 +311,19 @@ form{
   -webkit-transition: all .5s ease-in;
   transition: all .5s ease-in;
   outline:transparent;
+}
+
+.checkboxes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  label {
+    border-radius: 50%;
+    padding: 10px;
+  }
+  input[type='checkbox'] {
+    display: none;
+    &:checked ~ label {
+      background-color: #BDF8FF;
+    }
+  }
 }

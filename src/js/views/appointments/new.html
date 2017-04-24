@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<div class="loginForm">
+
+</div>
+<div class="container">
+
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6 col-md-offset-3">
     <form ng-submit="appointmentsNew.create()">
           <div class="form-group">
             <h1>New Appointment</h1>
@@ -10,7 +15,6 @@
             </div>
           </div>
 
-          Here: {{ appointmentsNew.appointment }}
 
             <!-- <div class="form-group">
               <label for="location">Location</label>
@@ -25,36 +29,36 @@
             <!-- <appointment-map></appointment-map> -->
 
              <div class="form-group">
-              <label for="date_time">Date/time</label>
+              <label class="form-control" for="date_time">Date/time</label>
               <input type="datetime-local" id="date_time" name="date_time" ng-model="appointmentsNew.appointment.start">
              </div>
 
             <div class="form-group">
-              <label for="specialist">Specialist/Doctor (if known)</label>
+              <label class="form-control" for="specialist">Specialist/Doctor (if known)</label>
               <input type="text" id="specialist" name="specialist" ng-model="appointmentsNew.appointment.specialist">
             </div>
 
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" id="title" name="title" ng-model="appointmentsNew.appointment.title">
+              <input class="btn" type="text" id="title" name="title" ng-model="appointmentsNew.appointment.title">
             </div>
 
             <div class="form-group">
               <label for="comment">Any comments/reminders?</label>
-              <input type="text" id="comment" name="comment" ng-model="appointmentsNew.appointment.comment">
+              <input class="btn" type="text" id="comment" name="comment" ng-model="appointmentsNew.appointment.comment">
             </div>
-
-            <div class="form-group">
-              <label ng-repeat="category in appointmentsNew.categories">
-                <input type="checkbox" name="categories" checklist-model="appointmentsNew.appointment.category_ids" checklist-value="category.id">{{ category.name }}
-              </label>
+            <div class="row">
+              <div ng-repeat="category in appointmentsNew.categories" class="checkboxes col-sm-3">
+                <input id="{{ category.name }}" class="btn" type="checkbox" name="categories" checklist-model="appointmentsNew.appointment.category_ids" checklist-value="category.id">
+                <label for="{{ category.name }}"><img ng-src="{{ category.image }}"></label>
+              </div>
             </div>
           <button class="btn">Add appointment</button>
         </form>
     </div>
 </div>
 
-
+</div>
 
   <!--
         <label for="category_ids"> Appointment category </label><br>

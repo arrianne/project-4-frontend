@@ -5,14 +5,14 @@
 <div class="row">
   <div class="col-md-6">
     <div class="form-group">
-      
+
       <h4>Medication:{{ usersShow.user.medication }}</h4>
       <h4>GP name:{{ usersShow.user.gp_name }}</h4>
       <h4>GP Address:{{ usersShow.user.gp_address }}</h4>
       <h4>Diagnosis date:{{ usersShow.user.diagnosis_date }}</h4>
       <h4>Diabetes type:{{ usersShow.user.diabetes_type }}</h4>
-      <button ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Edit</button>
-      <button ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
+      <button class="btn" ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Edit</button>
+      <button class="btn" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
     </div>
   </div>
 </div>

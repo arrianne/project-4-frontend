@@ -16,16 +16,18 @@
   </div>
 </div> -->
 
-
-
-  <div class="login">
-    <div class="header">
-      <span class="text">LOGIN</span>
-      <span class="loader"></span>
-    </div>
+<div class="bubble">
+  <div class="login-form behind">
     <form ng-submit="auth.login()" class="form">
       <input ng-model="auth.credentials.email" class="input" type="text", placeholder="Email">
       <input ng-model="auth.credentials.password" class="input" type="password" placeholder="Password">
       <button class="btn" type="submit">Login</button>
     </form>
+  </div>
+  <div class="login-form">
+    <div class="header">
+      <span class="text">LOGIN</span>
+      <span class="loader"></span>
+    </div>
+  </div>
 </div>
