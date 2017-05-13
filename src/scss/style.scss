@@ -323,7 +323,7 @@ h3 {
   .behind form {
     opacity: 0;
   }
-  &:hover {
+  &:hover, &.hover {
     .login-form {
       margin: -10rem 0 0 -20rem;
       &.behind {
