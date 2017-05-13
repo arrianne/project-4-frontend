@@ -7,16 +7,12 @@
     <div class="col-md-6 col-md-offset-3 reg-box">
         <div class="col-md-12">
           <h1>{{ usersShow.user.username }}</h1>
-          <h3>Medication:</h3>
-          <h4>{{ usersShow.user.medication }}</h4>
-          <h3>GP name:</h3>
-          <h4>{{ usersShow.user.gp_name }}</h4>
-          <h3>GP Address:</h3>
-          <h4>{{ usersShow.user.gp_address }}</h4>
-          <h3>Diagnosis date:</h3>
-          <h4>{{ usersShow.user.diagnosis_date }}</h4>
-          <h3>Diabetes type:</h3>
-          <h4>{{ usersShow.user.diabetes_type }}</h4>
+          <h3>Medication: | <strong>{{ usersShow.user.medication }}</strong></h3>
+          <h3>GP name: | <strong>{{ usersShow.user.gp_name }}</strong></h3>
+          <h3>GP Address: | <strong>{{ usersShow.user.gp_address }}</strong></h3>
+          <h3>Diagnosis date: | <strong>{{ usersShow.user.diagnosis_date }}</strong></h3>
+          <h3>Diabetes type: | <strong>{{ usersShow.user.diabetes_type }}</strong></h3>
+
           <button class="btn" ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Edit</button>
           <button class="btn" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
         </div>

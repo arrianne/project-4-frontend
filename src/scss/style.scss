@@ -11,9 +11,20 @@
   padding: 0 50px;
 }
 
+strong {
+  font-size: 1em;
+  color: #727272;
+  font-family: 'Roboto', sans-serif;
+}
+
 img {
   max-width: 100%;
   border-style: none;
+}
+
+h1 {
+    font-size: 5em;
+    margin: .67em 0;
 }
 
 .reg-box {
@@ -309,11 +320,20 @@ h3 {
 // }
 
 .bubble {
+  .behind form {
+    opacity: 0;
+  }
   &:hover {
     .login-form {
       margin: -10rem 0 0 -20rem;
       &.behind {
         width: 40rem;
+        z-index: 40;
+
+        form {
+          transition: opacity 0.5s cubic-bezier(0.8, 0, 1, 0);
+          opacity: 1;
+        }
       }
     }
 
